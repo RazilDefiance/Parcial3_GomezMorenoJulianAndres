@@ -1,5 +1,6 @@
 ﻿using CarWash.DAL.Entities;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Diagnostics.Metrics;
 using System.Reflection.Emit;
@@ -13,19 +14,18 @@ namespace CarWash.DAL
         }
 
         // Mapeando identidad
-        public DbSet<Country> Countries { get; set; }
-        public DbSet<Category> Categories { get; set; }
-        public DbSet<State> States { get; set; }
-        public DbSet<City> Cities { get; set; }
+        public DbSet<Vehicle> Vechiles { get; set; }
+        public DbSet<VechicleDetail> VechicleDetails { get; set; }
+        public DbSet<Service> Services { get; set; }
+
 
         // Creación indice para las tablas
         protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
+        {   
             base.OnModelCreating(modelBuilder);
-            modelBuilder.Entity<Country>().HasIndex(c => c.Name).IsUnique();
-            modelBuilder.Entity<Category>().HasIndex(c => c.Name).IsUnique();
-            modelBuilder.Entity<State>().HasIndex("Name", "CountryId").IsUnique();
-            modelBuilder.Entity<City>().HasIndex("Name", "StateId").IsUnique();
+            modelBuilder.Entity<Vehicle>().HasIndex(c => c.Plate).IsUnique();
+            modelBuilder.Entity<VechicleDetail>().HasIndex("VehicleDetailId").IsUnique();
+            modelBuilder.Entity<Service>().HasIndex("ServiceId").IsUnique();
         }
     }
 

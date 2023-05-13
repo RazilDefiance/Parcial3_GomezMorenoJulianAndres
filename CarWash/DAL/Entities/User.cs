@@ -45,9 +45,6 @@ namespace CarWash.DAL.Entities
         [Display(Name = "Tipo de usuario")]
         public UserType UserType { get; set; }
 
-        //[Display(Name = "Ciudad")]
-        //public City City { get; set; }
-
         //Propiedades de Lectura
         [Display(Name = "Usuario")]
         public string FullName => $"{FirstName} {LastName}";
