@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Diagnostics.Metrics;
 using System.Xml.Linq;
 
 namespace CarWash.DAL.Entities
@@ -14,5 +15,8 @@ namespace CarWash.DAL.Entities
         [MaxLength(10)]
         [Required(ErrorMessage = "The field {0} is mandatory")]
         public int Plate { get; set; }
+
+        [Display(Name = "Details")]
+        public ICollection<VechicleDetail> VechicleDetails { get; set; }
     }
 }

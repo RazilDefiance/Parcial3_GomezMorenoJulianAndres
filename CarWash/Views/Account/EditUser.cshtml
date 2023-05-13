@@ -1,0 +1,30 @@
+﻿@model CarWash.Models.EditUserViewModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Editar</h2>
+
+<h4>Usuario</h4>
+<hr />
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="EditUser" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <input type="hidden" asp-for="ImageId" />
+     
+            <partial name="../Shared/PartialViews/_User" />
+
+            <div class="form-group mt-2">
+                <input type="submit" value="Guardar" class="btn btn-outline-primary" />
+                <a asp-action="ChangePassword" class="btn btn-outline-secondary">Change Password</a>
+                <a asp-action="Index" asp-controller="Home" class="btn btn-outline-success">Back</a>
+            </div>
+        </form>
+    </div>
+    <div class="col-md-4">
+        <img src="@Model.ImageFullPath" style="width:300px;height:300px;border-radius:50%" />
+    </div>
+</div>

@@ -24,8 +24,8 @@ namespace CarWash.DAL
         {   
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<Vehicle>().HasIndex(c => c.Plate).IsUnique();
-            modelBuilder.Entity<VechicleDetail>().HasIndex("VehicleDetailId").IsUnique();
-            modelBuilder.Entity<Service>().HasIndex("ServiceId").IsUnique();
+            modelBuilder.Entity<VechicleDetail>().HasIndex(v => v.Id).IsUnique();
+            modelBuilder.Entity<Service>().HasIndex(s => s.Id).IsUnique();
         }
     }
 

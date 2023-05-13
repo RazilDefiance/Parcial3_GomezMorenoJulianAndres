@@ -44,7 +44,6 @@ builder.Services.ConfigureApplicationCookie(options =>
 
 
 
-
 var app = builder.Build();
 
 
