@@ -22,5 +22,7 @@ namespace CarWash.DAL.Entities
 
         [Display(Name = "Vehicles")]
         public ICollection<Vehicle> Vehicles { get; set; }
+
+ 
     }
 }

@@ -18,7 +18,7 @@ namespace CarWash.DAL.Entities
 
         // Relationship
 
-        [Display(Name = "ServiceID")]
+        [Display(Name = "ServiceReg")]
         public Service ServiceReg { get; set; }
 
         [Display(Name = "Details")]

@@ -53,13 +53,19 @@ namespace CarWash.Controllers
             {
                 try
                 {
+                    //var serreg = await _context.Services
+                    //    .Where(s => s.Name.Contains(addServicesVehicleViewModel.Services))
+                    //    .FirstOrDefaultAsync();
+
                     Vehicle vehicle = new()
                     {
+                        Id = Guid.NewGuid(),
                         Owner = addServicesVehicleViewModel.Owner,
                         Plate = addServicesVehicleViewModel.Plate,
-                        ServiceReg = addServicesVehicleViewModel.GetType().GUID,
                         CreateDate = DateTime.Now,
                     };
+
+                
 
                     _context.Add(vehicle);
                     await _context.SaveChangesAsync();

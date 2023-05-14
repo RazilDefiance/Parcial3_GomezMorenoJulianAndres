@@ -9,7 +9,7 @@ namespace CarWash.DAL.Entities
         public DateTime? DeliveryDate { get; set; }
 
         // Relationship
-        [Display(Name = "VechicleID")]
+        [Display(Name = "VechicleReg")]
         public Vehicle VechicleReg { get; set; }
     }
 }
