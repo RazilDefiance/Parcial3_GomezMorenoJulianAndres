@@ -1,0 +1,22 @@
+﻿@model CarWash.Models.AddServicesVehicleViewModel
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="form-group">
+            <label asp-for="Owner" class="control-label"></label>
+            <input asp-for="Owner" class="form-control" />
+            <span asp-validation-for="Owner" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Plate" class="control-label"></label>
+            <input asp-for="Plate" class="form-control" />
+            <span asp-validation-for="Plate" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Services" class="control-label"></label>
+            <select asp-for="Services" asp-items="Model.Services" class="form-control"></select>
+            <span asp-validation-for="Services" class="text-danger"></span>
+        </div>
+    </div>
+</div>
+

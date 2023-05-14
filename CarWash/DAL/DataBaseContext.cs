@@ -15,8 +15,8 @@ namespace CarWash.DAL
 
         // Mapeando identidad
         public DbSet<Service> Services { get; set; }
-        public DbSet<Vehicle> Vechiles { get; set; }
-        public DbSet<VehicleDetail> VechicleDetails { get; set; }
+        public DbSet<Vehicle> Vehicles { get; set; }
+        public DbSet<VehicleDetail> VehicleDetails { get; set; }
 
 
         // Creación indice para las tablas

@@ -1,10 +1,11 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.Diagnostics.Metrics;
+﻿using CarWash.DAL.Entities;
+using Microsoft.AspNetCore.Mvc;
+using System.ComponentModel.DataAnnotations;
 using System.Xml.Linq;
 
-namespace CarWash.DAL.Entities
+namespace CarWash.Models
 {
-    public class Vehicle : Entity
+    public class EditServicesVehicleViewModel : Entity
     {
         [Display(Name = "Owner")]
         [MaxLength(50)]
@@ -15,13 +16,5 @@ namespace CarWash.DAL.Entities
         [MaxLength(10)]
         [Required(ErrorMessage = "The field {0} is mandatory")]
         public string Plate { get; set; }
-
-        // Relationship
-
-        [Display(Name = "ServiceID")]
-        public Service ServiceReg { get; set; }
-
-        [Display(Name = "Details")]
-        public ICollection<VehicleDetail> VehicleDetails { get; set; }
     }
 }

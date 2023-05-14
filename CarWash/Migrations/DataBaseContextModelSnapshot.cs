@@ -164,9 +164,10 @@ namespace CarWash.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<int>("Plate")
+                    b.Property<string>("Plate")
+                        .IsRequired()
                         .HasMaxLength(10)
-                        .HasColumnType("int");
+                        .HasColumnType("nvarchar(10)");
 
                     b.Property<Guid>("ServiceRegId")
                         .HasColumnType("uniqueidentifier");
@@ -178,7 +179,7 @@ namespace CarWash.Migrations
 
                     b.HasIndex("ServiceRegId");
 
-                    b.ToTable("Vechiles");
+                    b.ToTable("Vehicles");
                 });
 
             modelBuilder.Entity("CarWash.DAL.Entities.VehicleDetail", b =>
@@ -206,7 +207,7 @@ namespace CarWash.Migrations
 
                     b.HasIndex("VechicleRegId");
 
-                    b.ToTable("VechicleDetails");
+                    b.ToTable("VehicleDetails");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>

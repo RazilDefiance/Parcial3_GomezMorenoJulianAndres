@@ -178,21 +178,21 @@ namespace CarWash.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Vechiles",
+                name: "Vehicles",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Owner = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    Plate = table.Column<int>(type: "int", maxLength: 10, nullable: false),
+                    Plate = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: false),
                     ServiceRegId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     CreateDate = table.Column<DateTime>(type: "datetime2", nullable: true),
                     ModifiedDate = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Vechiles", x => x.Id);
+                    table.PrimaryKey("PK_Vehicles", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Vechiles_Services_ServiceRegId",
+                        name: "FK_Vehicles_Services_ServiceRegId",
                         column: x => x.ServiceRegId,
                         principalTable: "Services",
                         principalColumn: "Id",
@@ -200,7 +200,7 @@ namespace CarWash.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "VechicleDetails",
+                name: "VehicleDetails",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
@@ -211,11 +211,11 @@ namespace CarWash.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_VechicleDetails", x => x.Id);
+                    table.PrimaryKey("PK_VehicleDetails", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_VechicleDetails_Vechiles_VechicleRegId",
+                        name: "FK_VehicleDetails_Vehicles_VechicleRegId",
                         column: x => x.VechicleRegId,
-                        principalTable: "Vechiles",
+                        principalTable: "Vehicles",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -266,25 +266,25 @@ namespace CarWash.Migrations
                 unique: true);
 
             migrationBuilder.CreateIndex(
-                name: "IX_VechicleDetails_Id",
-                table: "VechicleDetails",
+                name: "IX_VehicleDetails_Id",
+                table: "VehicleDetails",
                 column: "Id",
                 unique: true);
 
             migrationBuilder.CreateIndex(
-                name: "IX_VechicleDetails_VechicleRegId",
-                table: "VechicleDetails",
+                name: "IX_VehicleDetails_VechicleRegId",
+                table: "VehicleDetails",
                 column: "VechicleRegId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Vechiles_Plate",
-                table: "Vechiles",
+                name: "IX_Vehicles_Plate",
+                table: "Vehicles",
                 column: "Plate",
                 unique: true);
 
             migrationBuilder.CreateIndex(
-                name: "IX_Vechiles_ServiceRegId",
-                table: "Vechiles",
+                name: "IX_Vehicles_ServiceRegId",
+                table: "Vehicles",
                 column: "ServiceRegId");
         }
 
@@ -306,7 +306,7 @@ namespace CarWash.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
-                name: "VechicleDetails");
+                name: "VehicleDetails");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
@@ -315,7 +315,7 @@ namespace CarWash.Migrations
                 name: "AspNetUsers");
 
             migrationBuilder.DropTable(
-                name: "Vechiles");
+                name: "Vehicles");
 
             migrationBuilder.DropTable(
                 name: "Services");

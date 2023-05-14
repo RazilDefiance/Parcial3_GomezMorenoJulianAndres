@@ -29,7 +29,7 @@
                         @if (User.Identity.IsAuthenticated && User.IsInRole("Client"))
                         {
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Services for your vehicle</a>
+                                <a class="nav-link text-dark" asp-area="" asp-controller="ServicesVehicle" asp-action="Index">Services for your vehicle</a>
                             </li>
                         }
                         @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
