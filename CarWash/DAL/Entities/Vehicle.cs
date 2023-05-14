@@ -16,7 +16,12 @@ namespace CarWash.DAL.Entities
         [Required(ErrorMessage = "The field {0} is mandatory")]
         public int Plate { get; set; }
 
+        // Relationship
+
+        [Display(Name = "ServiceID")]
+        public Service ServiceReg { get; set; }
+
         [Display(Name = "Details")]
-        public ICollection<VechicleDetail> VechicleDetails { get; set; }
+        public ICollection<VehicleDetail> VehicleDetails { get; set; }
     }
 }

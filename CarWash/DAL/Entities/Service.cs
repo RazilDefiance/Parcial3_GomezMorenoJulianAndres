@@ -17,5 +17,10 @@ namespace CarWash.DAL.Entities
         [Display(Name = "Price")]
         [Required(ErrorMessage = "The field {0} is mandatory.")]
         public decimal Price { get; set; }
+
+        // Relationship
+
+        [Display(Name = "Vehicles")]
+        public ICollection<Vehicle> Vehicles { get; set; }
     }
 }

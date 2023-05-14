@@ -14,18 +14,18 @@ namespace CarWash.DAL
         }
 
         // Mapeando identidad
-        public DbSet<Vehicle> Vechiles { get; set; }
-        public DbSet<VechicleDetail> VechicleDetails { get; set; }
         public DbSet<Service> Services { get; set; }
+        public DbSet<Vehicle> Vechiles { get; set; }
+        public DbSet<VehicleDetail> VechicleDetails { get; set; }
 
 
         // Creación indice para las tablas
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {   
             base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<Service>().HasIndex(s => s.Name).IsUnique();
             modelBuilder.Entity<Vehicle>().HasIndex(c => c.Plate).IsUnique();
-            modelBuilder.Entity<VechicleDetail>().HasIndex(v => v.Id).IsUnique();
-            modelBuilder.Entity<Service>().HasIndex(s => s.Id).IsUnique();
+            modelBuilder.Entity<VehicleDetail>().HasIndex(d => d.Id).IsUnique();
         }
     }
 

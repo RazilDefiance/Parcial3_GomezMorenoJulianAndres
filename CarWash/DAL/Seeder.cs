@@ -32,7 +32,7 @@ namespace CarWash.DAL
         {
             if (!_context.Services.Any())
             {
-                _context.Services.Add(new Service { Name="Lavada Simple", Price=25000, CreateDate = DateTime.Now });
+                _context.Services.Add(new Service { Name = "Lavada Simple", Price=25000, CreateDate = DateTime.Now });
                 _context.Services.Add(new Service { Name = "Lavada + Polishada", Price = 50000, CreateDate = DateTime.Now });
                 _context.Services.Add(new Service { Name = "Lavada + Aspirada de Cojinería", Price = 30000, CreateDate = DateTime.Now });
                 _context.Services.Add(new Service { Name = "Lavada Full", Price = 65000, CreateDate = DateTime.Now });
